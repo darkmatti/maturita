@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentazione FSL / PCTO</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: rgba(255,255,255,0.92);
+      --text: #14213d;
+      --accent: #4d5bce;
+      --accent-2: #0077b6;
+      --muted: #5f6c82;
+      --shadow: 0 24px 60px rgba(20,33,61,0.08);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at top left, rgba(77,91,206,.12), transparent 25%),
+                  radial-gradient(circle at bottom right, rgba(0,119,182,.16), transparent 18%),
+                  var(--bg);
+      color: var(--text);
+    }
+    .viewer {
+      width: min(100%, 1180px);
+      min-height: 76vh;
+      background: var(--card);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(20,33,61,0.08);
+    }
+    .slide {
+      display: none;
+      padding: 56px 64px;
+      width: 100%;
+      min-height: 76vh;
+      position: absolute;
+      inset: 0;
+      overflow-y: auto;
+      transition: opacity 0.4s ease;
+    }
+    .slide.active {
+      display: block;
+      opacity: 1;
+    }
+    .slide h1,
+    .slide h2,
+    .slide h3 {
+      margin-top: 0;
+    }
+    h1 { font-size: clamp(2.6rem, 3vw, 3.8rem); letter-spacing: -0.03em; }
+    h2 { margin: 0.85em 0 0.5em; font-size: clamp(1.6rem, 2vw, 2.2rem); color: var(--accent); }
+    p, li { line-height: 1.75; font-size: 1rem; color: var(--muted); }
+    ul { padding-left: 1.2rem; margin: 1rem 0 0 0; }
+    li { margin: 0.6rem 0; }
+    .badge { display:inline-flex; align-items:center; gap:0.45rem; font-size:.9rem; font-weight:600; color:#fff; background: linear-gradient(135deg, var(--accent), var(--accent-2)); padding: 0.55rem 0.95rem; border-radius:999px; margin-bottom:1rem; }
+    .note { margin: 1.4rem 0 0; padding: 24px; border-left: 4px solid var(--accent); background: rgba(77,91,206,.06); border-radius: 18px; }
+    .footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 20px 36px;
+      background: rgba(244,247,251,0.88);
+      backdrop-filter: blur(10px);
+    }
+    .footer .controls {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .button {
+      border: none;
+      border-radius: 999px;
+      padding: 0.8rem 1rem;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      background: #fff;
+      color: var(--accent);
+      box-shadow: 0 14px 24px rgba(20,33,61,0.08);
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+    .button:hover { transform: translateY(-1px); background: #eef3ff; }
+    .indicator {
+      display: inline-flex;
+      gap: 0.55rem;
+      align-items: center;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #dbe2f1;
+    }
+    .dot.active { background: var(--accent); }
+    .key-help { color: var(--accent-2); font-weight: 700; }
+    .emoji { margin-right: 0.5rem; }
+    @media (max-width: 720px) {
+      .viewer { border-radius: 24px; }
+      .slide { padding: 32px 24px; }
+      .footer { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+  <div class="viewer" role="document">
+    <section class="slide active" data-slide="1">
+      <div class="badge">Presentazione FSL / PCTO</div>
+      <h1>Trasformare l’esperienza FSL in un punto di forza</h1>
+      <p>Obiettivo: mostrare come le esperienze di Formazione Scuola-Lavoro diventino un percorso formativo personale e una base solida per il colloquio d’esame.</p>
+      <div class="note">
+        <h2>Cosa conta davvero</h2>
+        <ul>
+          <li>Non si tratta solo di cosa hai fatto.</li>
+          <li>Conta soprattutto cosa hai imparato e come sei cambiato.</li>
+          <li>Le slides sono un supporto visivo, non un testo da leggere.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide" data-slide="2">
+      <div class="badge">Regole fondamentali</div>
+      <h2>Stile e sostanza</h2>
+      <ul>
+        <li><strong>Titolo evocativo:</strong> scegli un titolo personale, non "Presentazione FSL".</li>
+        <li><strong>Progetto di vita:</strong> racconta la crescita, le conferme o le smentite rispetto alle tue aspirazioni.</li>
+        <li><strong>No agli elenchi:</strong> dedica poco tempo al “cosa” e molto al “cosa ho imparato”.</li>
+        <li><strong>Percorso unitario:</strong> collega esperienze omogenee per costruire una narrazione coerente.</li>
+        <li><strong>Cura grafica:</strong> usa immagini e simboli per rendere la presentazione fluida e sentita.</li>
+      </ul>
+    </section>
+
+    <section class="slide" data-slide="3">
+      <div class="badge">Scelta del titolo</div>
+      <h2>Costruire il filo conduttore</h2>
+      <ul>
+        <li><strong>Parola chiave:</strong> scegli un sostantivo o un verbo che racchiuda il tuo percorso (es. Ascolto, Metodo, Scoperta).</li>
+        <li><strong>Sottotitolo:</strong> spiega con chiarezza come l’esperienza ti ha cambiato.</li>
+        <li><strong>Filo conduttore:</strong> tutto deve tornare al titolo scelto e mostrare un’evoluzione coerente.</li>
+      </ul>
+      <p class="note"><strong>Domande guida:</strong> come hai cambiato il tuo modo di studiare o lavorare? Quale limite hai superato? Come si collega con il tuo futuro?</p>
+    </section>
+
+    <section class="slide" data-slide="4">
+      <div class="badge">Struttura ideale</div>
+      <h2>5/6 slide efficaci</h2>
+      <ul>
+        <li><strong>Copertina:</strong> titolo evocativo, nome, immagine e colore coerenti.</li>
+        <li><strong>Contesto:</strong> dove è avvenuta l’attività e perché hai scelto quel percorso.</li>
+        <li><strong>Mansioni:</strong> parole chiave chiare e significative, senza eccessi.</li>
+        <li><strong>Competenze:</strong> metti in evidenza hard skill e soft skill rilevanti.</li>
+        <li><strong>Educazione civica:</strong> collega l’esperienza a valori come sicurezza, sostenibilità, cittadinanza.</li>
+        <li><strong>Conclusioni:</strong> spiega come l’esperienza ha influenzato le tue scelte future.</li>
+      </ul>
+    </section>
+
+    <section class="slide" data-slide="5">
+      <div class="badge">Esposizione</div>
+      <h2>Come presentare con impatto</h2>
+      <ul>
+        <li>Non leggere le slides: guarda la commissione e usa le slide come supporto visivo.</li>
+        <li>Evita un tono apatico: anche le esperienze difficili possono diventare punti di crescita.</li>
+        <li>Non è un obbligo burocratico: parla con passione, empatia e maturità.</li>
+      </ul>
+      <p class="note">L’obiettivo è dimostrare maturità, autonomia e responsabilità con un’autoriflessione consapevole.</p>
+    </section>
+
+    <section class="slide" data-slide="6">
+      <div class="badge">Elementi strategici</div>
+      <h2>Argomenti che fanno la differenza</h2>
+      <ul>
+        <li><strong>Maturità:</strong> mostra consapevolezza e crescita personale.</li>
+        <li><strong>Educazione civica:</strong> sottolinea temi come sicurezza, tutela ambientale, libertà, inclusione.</li>
+        <li><strong>Aneddoti:</strong> racconta brevi episodi reali che dimostrano il tuo coinvolgimento.</li>
+      </ul>
+    </section>
+
+    <section class="slide" data-slide="7">
+      <div class="badge">Suggerimenti specifici</div>
+      <h2>1. Attività extrascolastiche</h2>
+      <ul>
+        <li>Presenta l’attività come progetto organizzato, non come passatempo.</li>
+        <li>Valorizza project management, team working, public speaking.</li>
+        <li>Usa titoli che esaltino comunicazione, scoperta personale e impegno.</li>
+      </ul>
+    </section>
+
+    <section class="slide" data-slide="8">
+      <div class="badge">Suggerimenti specifici</div>
+      <h2>2. Service Learning</h2>
+      <ul>
+        <li>Collega l’esperienza direttamente all’educazione civica.</li>
+        <li>Mostra l’impatto concreto sulla comunità e la solidarietà.</li>
+        <li>Riferisciti ai valori costituzionali di inclusione e rispetto.</li>
+      </ul>
+    </section>
+
+    <section class="slide" data-slide="9">
+      <div class="badge">Suggerimenti specifici</div>
+      <h2>3. Stages aziendali</h2>
+      <ul>
+        <li>Spiega come hai compreso l’organigramma e le dinamiche del lavoro.</li>
+        <li>Sottolinea la formazione sulla sicurezza sul lavoro.</li>
+        <li>Mostra se l’esperienza ha confermato o modificato le tue aspirazioni.</li>
+      </ul>
+    </section>
+
+    <section class="slide" data-slide="10">
+      <div class="badge">Suggerimenti specifici</div>
+      <h2>4. Orientamento universitario</h2>
+      <ul>
+        <li>Fai emergere il valore del metodo scientifico e dell’apprendimento attraverso la ricerca.</li>
+        <li>Mostra il legame con il tuo progetto di vita e le scelte future.</li>
+        <li>Usa titoli che parlino di crescita, scoperta e bussola per il futuro.</li>
+      </ul>
+      <p class="note">Concludi con un messaggio chiaro su come l’esperienza ha definito il tuo prossimo passo.</p>
+    </section>
+
+    <div class="footer">
+      <div class="controls">
+        <button class="button" id="prevBtn">← Indietro</button>
+        <button class="button" id="nextBtn">Avanti →</button>
+      </div>
+      <div class="indicator">
+        <span class="emoji">🎯</span>
+        <span id="pageLabel">Slide 1 di 10</span>
+      </div>
+      <div class="key-help">Usa le frecce sinistra/destra</div>
+    </div>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const pageLabel = document.getElementById('pageLabel');
+    let currentIndex = 0;
+
+    function updateSlides() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentIndex);
+      });
+      pageLabel.textContent = `Slide ${currentIndex + 1} di ${slides.length}`;
+    }
+
+    function goTo(index) {
+      currentIndex = (index + slides.length) % slides.length;
+      updateSlides();
+    }
+
+    prevBtn.addEventListener('click', () => goTo(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goTo(currentIndex + 1));
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight' || event.key === 'PageDown') {
+        goTo(currentIndex + 1);
+      }
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+        goTo(currentIndex - 1);
+      }
+    });
+
+    updateSlides();
+  </script>
+</body>
+</html>
